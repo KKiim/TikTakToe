@@ -62,7 +62,7 @@ int getBestMoveID(const vector<SCORE>& res) {
 	int bestID = 0;
 	float bestScore = -1;
 	for (int i = 0; i < res.size(); i++) {
-		float fScrore = scoreToFloat(res[i]);
+		float fScrore = scoreToFloat2(res[i]);
 		if (fScrore > bestScore) {
 			bestID = i;
 			bestScore = fScrore;
@@ -84,7 +84,6 @@ Board BoardGame::getBestMove(const vector<Board>& moves, const Player& pAtMove, 
 		score.opTotalWins = 0;
 		playerAtTurn    = pAtMove;
 		playerNotAtTurn = pNotAtMove;
-		//thread name(bar, 0, 0);
 		findScoreRecursive(move, score);
 		res.push_back(score);
 	}

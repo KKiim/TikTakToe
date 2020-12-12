@@ -25,8 +25,6 @@ private:
 public:
 	BoardGame();
 	virtual bool didWin(int player) = 0;
-	virtual Board playerOneMove(Board board) = 0;
-	virtual Board playerTwoMove(Board board) = 0;
 	virtual vector<Board> getPosMoves() = 0;
 	void changePlayerAtMove();
 	void doAiMove();

@@ -26,6 +26,11 @@ void Board::constructHelper(int width, int height) {
 
 void Board::drawBoard()
 {
+    if (util.getCfgVal("useSimpleDraw") == "true") {
+        simpleDrawBoard();
+        return;
+    }
+
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             pair<int, int> currentPos(i, j);
@@ -39,6 +44,20 @@ void Board::drawBoard()
         cout << '\n';
     }
     cout << "\33[" << 34 << "m";
+    cout << '\n' << "------" << '\n';
+}
+
+void Board::simpleDrawBoard()
+{
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            pair<int, int> currentPos(i, j);
+            int playerID = figurePosis[currentPos].playerID;
+            char figChar = figurePosis[currentPos].getSymbol();
+            cout << figChar << ' ';
+        }
+        cout << '\n';
+    }
     cout << '\n' << "------" << '\n';
 }
 
@@ -79,6 +98,7 @@ string Board::getString()
 
 void Board::getBoardFromString(string input)
 {
+    if (input == "") cout << "ERROR in Board::getBoardFromString";
     int count = 0;
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {

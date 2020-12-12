@@ -5,7 +5,9 @@
 #include <sstream>
 #include "Player.h"
 #include "Figure.h"
+#include "Utils.h"
 using namespace std;
+extern Utils util;
 
 class Board
 {
@@ -13,6 +15,7 @@ public:
 	Board();
 	Board(int width, int heigt);
 	void constructHelper(int width, int heigt);
+	void simpleDrawBoard();
 	void drawBoard();
 	int getWidth();
 	int getHeight();

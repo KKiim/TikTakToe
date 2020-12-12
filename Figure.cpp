@@ -2,7 +2,7 @@
 
 Figure::Figure()
 {
-	this->symbol = ' ';
+	this->symbol = '_';
 	this->name = "leer";
 	this->playerID = 0;
 }
