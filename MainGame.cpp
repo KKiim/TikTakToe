@@ -22,16 +22,8 @@ int main()
 
 
 string startGame(BoardGame& myBoardGame) {
-    //string boardString = "2X1O2X:0 1O2X:1O0 0 :\n";
-    //string boardString = "2X0 2X:0 1O0 :1O0 0 :\n";
-    //string boardString = "0 0 0 :0 0 0 :0 0 0 :\n"; //2X0 0 :0 1O0 : 1O0 0 :
-    //string boardString   = "2X0 2X:0 1O0 :1O0 0 :\n";
-    //string boardString = "2X2X0 :0 0 0 :0 0 0 :\n";
-    //string boardString = "2X2X0 :0 0 0 :1O1O2X:\n";
     //string boardString = "2X0 2X:0 1O0 :1O0 0 :\n";
     string boardString = util.getCfgVal("startBoardString");
-    boardString += "\n";
-
 
 
     myBoardGame.board.getBoardFromString(boardString);

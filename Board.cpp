@@ -110,6 +110,6 @@ void Board::getBoardFromString(string input)
         }
         count++; //input += '\n';
     }
-    cout << input;
+    cout << input << endl;
     return;
 }
