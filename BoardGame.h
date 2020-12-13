@@ -26,6 +26,7 @@ public:
 	BoardGame();
 	virtual bool didWin(int player) = 0;
 	virtual vector<Board> getPosMoves() = 0;
+	virtual Board getInitBoard() = 0;
 	void changePlayerAtMove();
 	void doAiMove();
 	Board getBestMove(const vector<Board>& moves, const Player& p1, const Player& p2);
@@ -33,7 +34,7 @@ public:
 	int getRoundNo();
 	void nextRound();
 
-	Board board;
+	Board  board;
 	Player playerAtTurn;
 	Player playerNotAtTurn;
 	Player aiMyself;

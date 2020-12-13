@@ -28,7 +28,7 @@ void BoardGame::doAiMove()
 	vector<Board> moves;
 	moves = getPosMoves();
 
-	Board move;
+	Board move = getInitBoard();
 	move = getBestMove(moves, oldplayerAtTurn, oldplayerNotAtTurn);
 
 	board = move;

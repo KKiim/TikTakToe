@@ -13,8 +13,8 @@ int main()
         cout << startGame(tikTakToe);
     }
     else if ((util.getCfgVal("gameName") == "Chess")) {
-        //Chess chess = Chess();
-        //cout << startGame(chess);
+        Chess chess = Chess();
+        cout << startGame(chess);
     }
 
     cout << cin.get();

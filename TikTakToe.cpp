@@ -11,6 +11,11 @@ TikTakToe::TikTakToe(){
     Figure figP2 = Figure('X', "Kreuz", 2);
     playerAtTurn    = Player("Spieler 1", "O", 1, {figP1});
     playerNotAtTurn = Player("Spieler 2", "X", 2, { figP2 });
+    board = getInitBoard();
+}
+
+Board TikTakToe::getInitBoard() {
+    return Board(3, 3);
 }
 
 bool TikTakToe::didWin(int player) {
