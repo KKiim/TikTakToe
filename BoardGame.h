@@ -21,6 +21,7 @@ class BoardGame
 {
 private:
 	int aiRekDepth;
+	int aiMaxRekDepth;
 
 public:
 	BoardGame();

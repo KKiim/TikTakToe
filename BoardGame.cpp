@@ -74,6 +74,7 @@ int getBestMoveID(const vector<SCORE>& res) {
 Board BoardGame::getBestMove(const vector<Board>& moves, const Player& pAtMove, const Player& pNotAtMove) {
 	vector<SCORE> res;
 	int mID = 0;
+	aiMaxRekDepth = util.getCfgValInt("aiMaxRecDepth");
 
 	for (Board move : moves) {
 		aiRekDepth = 0;
@@ -97,7 +98,7 @@ void BoardGame::findScoreRecursive(Board& move, SCORE& score) {
 	vector<Board> moves;
 	Board oldBoard = board;
 	board = move;
-	if (aiRekDepth > 5) return;
+	if (aiRekDepth > aiMaxRekDepth) return;
 	int badity = 10 - aiRekDepth;
 	int howBad = pow(2, badity);
 

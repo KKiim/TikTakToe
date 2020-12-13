@@ -40,3 +40,9 @@ string Utils::getCfgVal(string strKey)
 {
     return cfg[strKey];;
 }
+
+int Utils::getCfgValInt(string strKey)
+{
+    int res = stoi(cfg[strKey]);
+    return res;
+}
